@@ -1,4 +1,6 @@
 class Module():
+    name = 'Standard Module'
+    
     def __init__(self, inputs=()):
         self.inputs = inputs
         self.outputs = ()
