@@ -30,7 +30,11 @@ class App(tkinter.Tk):
         return super().quit()
 
 def main(baseObject=None):
-    pass
+    if baseObject is None:
+        baseObject = {}
+    save(baseObject, 'temp_project.pickle')
+    app = App(baseObject)
+    app.mainloop()
 
 def save(baseObject, filename):
     pickle.dump(baseObject, open(filename, 'wb'))
