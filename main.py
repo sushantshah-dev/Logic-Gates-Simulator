@@ -25,6 +25,7 @@ class App(tkinter.Tk):
         self.tab_layout.pack(side='bottom', fill='both', expand=True)
         
         self.tabs = []
+        self.new_tab(self.baseObject)
 
     def new_tab(self, baseObject: Module) -> None:
         self.tabs.append((tkinter.Frame(self.tab_layout), baseObject))
