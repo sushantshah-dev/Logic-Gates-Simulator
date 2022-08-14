@@ -1,5 +1,14 @@
 import sys, pickle, tkinter
 
+class App(tkinter.Tk):
+    def __init__(self, baseObject=None):
+        super().__init__()
+
+        self.baseObject = baseObject
+        self.title('Logic Gate Simulator')
+        self.geometry('800x600')
+        self.resizable(True, True)
+        
 def main(baseObject=None):
     pass
 
