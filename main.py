@@ -21,6 +21,16 @@ class App(tkinter.Tk):
         self.menubar.add_cascade(label='File', menu=self.filemenu)
         self.config(menu=self.menubar)
 
+        self.tab_layout = tkinter.ttk.Notebook(self)
+        self.tab_layout.pack(side='bottom', fill='both', expand=True)
+        
+        self.tabs = []
+
+    def new_tab(self, baseObject: Module) -> None:
+        self.tabs.append((tkinter.Frame(self.tab_layout), baseObject))
+        tkinter.Canvas(self.tabs[-1][0], bg="#202020").pack(fill='both', expand=True)
+        self.tab_layout.add(self.tabs[-1][0], text=self.tabs[-1][1].name)
+
     def _save(self):
         save()
 
