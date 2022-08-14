@@ -1,4 +1,5 @@
 import sys, pickle, tkinter, tkinter.ttk
+from module import Module
 
 class App(tkinter.Tk):
     def __init__(self, baseObject=None, file=None):
@@ -31,7 +32,7 @@ class App(tkinter.Tk):
 
 def main(baseObject=None):
     if baseObject is None:
-        baseObject = {}
+        baseObject = Module()
     save(baseObject, 'temp_project.pickle')
     app = App(baseObject)
     app.mainloop()
