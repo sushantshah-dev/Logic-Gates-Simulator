@@ -1,4 +1,4 @@
-import sys, pickle, tkinter
+import sys, pickle, tkinter, tkinter.ttk
 
 class App(tkinter.Tk):
     def __init__(self, baseObject=None):
