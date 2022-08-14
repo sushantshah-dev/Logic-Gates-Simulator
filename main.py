@@ -1,11 +1,13 @@
 import sys, pickle, tkinter, tkinter.ttk
 
 class App(tkinter.Tk):
-    def __init__(self, baseObject=None):
+    def __init__(self, baseObject=None, file=None):
         super().__init__()
 
         self.baseObject = baseObject
-        self.title('Logic Gate Simulator')
+        self.file = file
+
+        self.title('Logic Gate Simulator - ' + self.file if self.file else 'Logic Gate Simulator')
         self.geometry('800x600')
         self.resizable(True, True)
         
