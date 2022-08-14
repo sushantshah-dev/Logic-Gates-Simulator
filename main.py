@@ -1,4 +1,4 @@
-import sys, pickle
+import sys, pickle, tkinter
 
 def main(baseObject=None):
     pass
