@@ -9,6 +9,24 @@ class App(tkinter.Tk):
         self.geometry('800x600')
         self.resizable(True, True)
         
+        self.menubar = tkinter.Menu(self)
+        self.filemenu = tkinter.Menu(self.menubar, tearoff=0)
+        self.filemenu.add_command(label='Save', command=self._save)
+        self.filemenu.add_command(label='Load', command=self._load)
+        self.filemenu.add_separator()
+        self.filemenu.add_command(label='Exit', command=self.quit)
+        self.menubar.add_cascade(label='File', menu=self.filemenu)
+        self.config(menu=self.menubar)
+
+    def _save(self):
+        save()
+
+    def _load(self):
+        pass
+
+    def quit(self) -> None:
+        return super().quit()
+
 def main(baseObject=None):
     pass
 
